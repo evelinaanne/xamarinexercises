@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Popup.MainPage">
+
+    <AbsoluteLayout Padding="0" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+        <Image Source="clouds"
+               Aspect="Fill"></Image>
+        <StackLayout AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" >
+                <Button HorizontalOptions="Center" VerticalOptions="Center" Clicked="Iampopup" Text="Click me!"></Button>
+            </StackLayout>
+        </StackLayout>
+        <ContentView x:Name="popupContent" BackgroundColor="#C0808080" Padding="10, 0" IsVisible="false" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All">
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+                <StackLayout HeightRequest="200"
+                         WidthRequest="300"
+                         BackgroundColor="White"
+                         Padding="20">
+                    <StackLayout HorizontalOptions="Center"
+                                 VerticalOptions="Center">
+                        <Label Text="Choose an option"
+                               FontAttributes="Bold"></Label>
+                        <Picker Title="Choose option" x:Name="Options" HorizontalOptions="FillAndExpand">
+                            <Picker.Items>
+                                <x:String>Option 1</x:String>
+                                <x:String>Option 2</x:String>
+                            </Picker.Items>
+                        </Picker>
+                        <Button Text="Go back"  Clicked="Popupends"></Button>
+                    </StackLayout>
+                </StackLayout>
+        </StackLayout>
+    </ContentView>
+    </AbsoluteLayout>
+</ContentPage>
